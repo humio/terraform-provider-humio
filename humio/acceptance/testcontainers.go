@@ -77,7 +77,7 @@ func humioRequest(identifier string) (testcontainers.ContainerRequest, nat.Port)
 	port, _ := nat.NewPort("tcp", "8080")
 	req := testcontainers.ContainerRequest{
 		Name:         identifier,
-		Image:        "humio/humio:stable", // TODO: Support multiple versions?
+		Image:        "humio/humio:1.18.4", // TODO: Support multiple versions?
 		ExposedPorts: []string{port.Port()},
 		Env: map[string]string{
 			"HUMIO_JVM_ARGS":        humioJvmArgs,
